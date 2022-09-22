@@ -1,0 +1,21 @@
+.headerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid red;
+}
+
+.pageTitle {
+  color: black;
+  margin-left: 1.5rem;
+  align-content: center;
+}
+
+.viewAllQueensButton {
+  text-decoration: none;
+  color: black;
+  margin-right: 1.5rem;
+  background-color: pink;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
