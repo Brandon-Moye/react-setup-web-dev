@@ -1,6 +1,15 @@
 import "./cardDisplaysStyle.css";
+import React from "react";
 
 export default function CardDisplays() {
+  const [allQUeens, setAllQueens] = React.useState([]);
+
+  React.useEffect(function () {
+    fetch(`http://www.nokeynoshade.party/api/queens/all`)
+      .then((res) => res.json())
+      .then((data) => setAllQueens(data.data.memes));
+  }, []);
+
   return (
     <div className="cardDisplaySectionContainer">
       <h3 className="myQueensContainerTitle">My Queens</h3>

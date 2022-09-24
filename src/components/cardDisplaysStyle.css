@@ -15,6 +15,6 @@
 .myQueensContainer > div {
   border: 1px solid pink;
   width: 15rem;
-  height: 20rem;
+  height: 25rem;
   margin: 1rem;
 }
