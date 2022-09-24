@@ -8,11 +8,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* border: 1px solid red; */
-  background-color: #FF92C2;
+  background-color: #ff92c2;
 }
 
-.pageTitle, .viewAllQueensButton {
+.pageTitle,
+.viewAllQueensButton {
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
@@ -21,7 +21,7 @@
   color: black;
   margin-left: 1.5rem;
   align-content: center;
-  font-family: 'Aboreto', ;
+  font-family: "Aboreto";
   font-weight: 400;
 }
 
@@ -33,4 +33,3 @@
   padding: 0.5rem;
   border-radius: 5px;
 }
-
