@@ -1,0 +1,17 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.searchBar {
+  margin-top: 1rem;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  width: 35rem;
+  height: 3rem;
+  font-size: 2rem;
+  border-radius: 5px;
+  border: 1px solid pink;
+  padding: 1rem;
+}
