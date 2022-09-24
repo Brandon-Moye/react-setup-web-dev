@@ -1,6 +1,7 @@
 import Header from "./components/Header";
 import Instructions from "./components/Instructions";
 import Search from "./components/Search";
+import CardDisplays from "./components/CardDisplay";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <Header />
       <Instructions />
       <Search />
+      <CardDisplays />
     </div>
   );
 }

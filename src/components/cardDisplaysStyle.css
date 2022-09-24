@@ -1,0 +1,20 @@
+.cardDisplaySectionContainer {
+  margin-top: 1.5rem;
+}
+.myQueensContainerTitle {
+  border-bottom: 1px solid pink;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+.myQueensContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.myQueensContainer > div {
+  border: 1px solid pink;
+  width: 15rem;
+  height: 20rem;
+  margin: 1rem;
+}
