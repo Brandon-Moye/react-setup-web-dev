@@ -1,14 +1,28 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 .headerContainer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border: 1px solid red;
+  /* border: 1px solid red; */
+  background-color: #FF92C2;
+}
+
+.pageTitle, .viewAllQueensButton {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .pageTitle {
   color: black;
   margin-left: 1.5rem;
   align-content: center;
+  font-family: 'Aboreto', ;
+  font-weight: 400;
 }
 
 .viewAllQueensButton {
@@ -19,3 +33,4 @@
   padding: 0.5rem;
   border-radius: 5px;
 }
+
