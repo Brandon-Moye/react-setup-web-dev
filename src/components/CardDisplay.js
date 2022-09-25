@@ -17,14 +17,14 @@ export default function CardDisplays() {
       .then((data) => setAllQueens(data));
   }, []);
 
-  function phoo() {
+  function generateARandonQueen() {
     const randomNumber = Math.floor(Math.random() * allQueens.length);
     const newQueen = allQueens[randomNumber];
     setMyFavQueens((prevQueen) => ({
       ...prevQueen,
       image: newQueen.image_url,
       name: newQueen.name,
-      winner: newQueen.winner ? "hunty" : "flop",
+      winner: newQueen.winner ? "Yes" : "No",
       congenial: newQueen.missCongeniality ? "Yes" : "No",
     }));
   }
@@ -34,7 +34,7 @@ export default function CardDisplays() {
   return (
     <div className="cardDisplaySectionContainer">
       <h3 className="myQueensContainerTitle">My Queens</h3>
-      <button onClick={phoo}>phoo</button>
+      <button onClick={generateARandonQueen}>generateARandonQueen</button>
       <div className="myQueensContainer">
         <div className="myQueen--1">
           <img src={myFavQueens.image} className="myQueen--1Image"></img>
