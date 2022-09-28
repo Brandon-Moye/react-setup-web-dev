@@ -2,12 +2,13 @@ import "./cardDisplaysStyle.css";
 import React from "react";
 
 export default function CardDisplays() {
-  const [myFavQueens, setMyFavQueens] = React.useState({
-    image: "",
-    name: "",
-    winner: "",
-    congenial: "",
-  });
+  const [myFavQueens, setMyFavQueens] = React.useState([
+    // id: "",
+    // image: "",
+    // queenName: "",
+    // winner: "",
+    // congenial: "",
+  ]);
 
   const [allQueens, setAllQueens] = React.useState([]);
 
@@ -20,13 +21,19 @@ export default function CardDisplays() {
   function generateARandonQueen() {
     const randomNumber = Math.floor(Math.random() * allQueens.length);
     const newQueen = allQueens[randomNumber];
-    setMyFavQueens((prevQueen) => ({
+    // console.log(newQueen);
+    // setMyFavQueens((prevQueen) => [newQueen, ...prevQueen]);
+    // console.log(myFavQueens);
+    setMyFavQueens((prevQueen) => [
       ...prevQueen,
-      image: newQueen.image_url,
-      name: newQueen.name,
-      winner: newQueen.winner ? "Yes" : "No",
-      congenial: newQueen.missCongeniality ? "Yes" : "No",
-    }));
+      newQueen,
+      // id: newQueen.id,
+      // image: newQueen.image_url,
+      // queenName: newQueen.name,
+      // winner: newQueen.winner ? "Yes" : "No",
+      // congenial: newQueen.missCongeniality ? "Yes" : "No",
+    ]);
+    console.log(myFavQueens);
   }
   // const number = 0;
   // const newQueen = allQueens[number].name;
