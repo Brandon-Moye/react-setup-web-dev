@@ -35,6 +35,7 @@ export default function CardDisplays() {
     ]);
     console.log(myFavQueens);
   }
+
   // const number = 0;
   // const newQueen = allQueens[number].name;
   // console.log(newQueen);
