@@ -5,10 +5,9 @@ export default function CardDisplays(props) {
   return (
     <div className="cardDisplaySectionContainer">
       <h3 className="myQueensContainerTitle">My Queens</h3>
-      <button>generateARandonQueen</button>
       <div className="myQueensContainer">
         <div className="myQueen--1">
-          <img src={props.item.image} className="myQueen--1Image"></img>
+          <img src={props.item.image_url} className="myQueen--1Image"></img>
           <p className="myQueen--1Name">Name: {props.item.name}</p>
           <p className="myQueen--1IsWinner">
             Winner: {props.item.winner ? "Yes" : "No"}
