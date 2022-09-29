@@ -9,7 +9,6 @@
 
 .myQueensContainer {
   display: flex;
-  justify-content: center;
 }
 
 .myQueensContainer > div {
