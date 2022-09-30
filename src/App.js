@@ -2,6 +2,7 @@ import Header from "./components/Header";
 import Instructions from "./components/Instructions";
 import Search from "./components/Search";
 import CardDisplays from "./components/CardDisplay";
+import ViewAllQueens from "./components/ViewAllQueens";
 import React from "react";
 
 function App() {
@@ -13,15 +14,20 @@ function App() {
       .then((data) => setAllQueens(data));
   }, []);
 
-  const queenElements = allQueens.map((item) => {
+  const myQueenElements = allQueens.map((item) => {
     return <CardDisplays item={item} />;
+  });
+
+  const gridQueenElements = allQueens.map((item) => {
+    return <ViewAllQueens item={item} handleClick={onclick} />;
   });
   return (
     <div>
       <Header />
       <Instructions />
       <Search />
-      {queenElements}
+      {myQueenElements}
+      {gridQueenElements}
     </div>
   );
 }

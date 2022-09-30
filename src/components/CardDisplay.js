@@ -15,7 +15,7 @@ export default function CardDisplays(props) {
             Congenial: {props.item.missCongeniality ? "Yes" : "No"}
           </p>
           <p className="myQueen--Quote">"{props.item.quote}"</p>
-          <button className="myQueen--Id">Select{props.item.id}</button>
+          <button className="myQueen--Id">Shantay {props.item.id}</button>
         </div>
       </div>
     </div>
