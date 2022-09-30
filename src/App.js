@@ -14,11 +14,11 @@ function App() {
       .then((data) => setAllQueens(data));
   }, []);
 
-  const myQueenElements = allQueens.map((item) => {
+  const myQueenElements = allQueens.splice(0, 10).map((item) => {
     return <CardDisplays item={item} />;
   });
 
-  const gridQueenElements = allQueens.map((item) => {
+  const gridQueenElements = allQueens.splice(11, 21).map((item) => {
     return <ViewAllQueens item={item} handleClick={onclick} />;
   });
   return (
