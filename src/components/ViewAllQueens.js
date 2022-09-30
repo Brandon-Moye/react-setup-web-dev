@@ -3,7 +3,7 @@ import React from "react";
 
 export default function ViewAllQueens(props) {
   function handleClick() {
-    return console.log("clicked");
+    return console.log({ props });
   }
   return (
     <div className="ViewAllQueensContainer">
