@@ -12,9 +12,9 @@ export default function ViewAllQueens(props) {
 
   // console.log(allQueens);
 
-  // function handleClick() {
-  //   console.log(props.item);
-  // }
+  function handleClick() {
+    console.log(props.item);
+  }
 
   // const mapQueen = props.allQueens.map((item) => {
   //   return (item = { item });
@@ -24,23 +24,21 @@ export default function ViewAllQueens(props) {
     <p>{queen.whole}</p>
   ));
 
-  console.log(myQueenElements);
+  // console.log(myQueenElements);
 
   return (
     <div className="queenContainer">
+      <button onClick={props.newQueen}>+</button>
+      {myQueenElements}
       <div className="ViewAllQueensContainer">
-        <button onClick={props.newQueen}>+</button>
-
-        {myQueenElements}
-
-        {/* <div className="gridCell">{props.item.name}</div> */}
-        {/* <div className="gridCell">{props.item.winner ? "Yes" : "No"}</div>
+        <div className="gridCell">{props.item.name}</div>
+        <div className="gridCell">{props.item.winner ? "Yes" : "No"}</div>
         <div className="gridCell">
           {props.item.missCongeniality ? "Yes" : "No"}
         </div>
         <button onClick={handleClick} className="gridCell">
           {props.item.id}
-        </button> */}
+        </button>
       </div>
     </div>
   );

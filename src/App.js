@@ -16,24 +16,31 @@ function App() {
       .then((data) => setAllQueens(data));
   }, []);
 
-  console.log(allQueens);
+  // console.log(allQueens);
   // const myQueenElements = allQueens.splice(0, 10).map((item) => {
   //   return <CardDisplays item={item} />;
   // });
 
-  // const gridQueenElements = allQueens.splice(11, 21).map((item) => {
-  //   return <ViewAllQueens item={item} handleClick={onclick} />;
-  // });
+  const [emptyQueens, setEmptyQueens] = React.useState([]);
+
+  const gridQueenElements = allQueens.map((item) => {
+    return (
+      <ViewAllQueens
+        item={item}
+        handleClick={onclick}
+        emptyQueens={emptyQueens}
+        newQueen={addNewQueen}
+      />
+    );
+  });
 
   // --------------------------
-  const [emptyQueens, setEmptyQueens] = React.useState([]);
 
   function addNewQueen() {
     const randomNumber = Math.floor(Math.random() * allQueens.length);
     const certainQueen = allQueens[randomNumber].name;
     const newQueen = {
       id: nanoid(),
-      body: "Tammy",
       whole: certainQueen,
     };
     setEmptyQueens((prevQueen) => [newQueen, ...prevQueen]);
@@ -43,9 +50,9 @@ function App() {
       <Header />
       <Instructions />
       <Search />
-      <ViewAllQueens emptyQueens={emptyQueens} newQueen={addNewQueen} />
+      {/* <ViewAllQueens emptyQueens={emptyQueens} newQueen={addNewQueen} /> */}
       {/* {myQueenElements} */}
-      {/* {gridQueenElements} */}
+      {gridQueenElements}
     </div>
   );
 }
