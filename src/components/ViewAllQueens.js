@@ -20,16 +20,19 @@ export default function ViewAllQueens(props) {
   //   return (item = { item });
   // });
   // ----------------------------------
-  const myQueenElements = props.emptyQueens.map((queen) => <p>{queen.body}</p>);
+  const myQueenElements = props.emptyQueens.map((queen) => (
+    <p>{queen.whole}</p>
+  ));
 
   console.log(myQueenElements);
 
   return (
     <div className="queenContainer">
       <div className="ViewAllQueensContainer">
+        <button onClick={props.newQueen}>+</button>
+
         {myQueenElements}
 
-        <button onClick={props.newQueen}>+</button>
         {/* <div className="gridCell">{mapQueen}</div> */}
         {/* <div className="gridCell">{props.item.winner ? "Yes" : "No"}</div>
         <div className="gridCell">

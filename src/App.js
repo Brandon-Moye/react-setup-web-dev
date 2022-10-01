@@ -7,14 +7,15 @@ import React from "react";
 import { nanoid } from "nanoid";
 
 function App() {
-  // const [allQueens, setAllQueens] = React.useState([]);
+  const [allQueens, setAllQueens] = React.useState([]);
 
-  // React.useEffect(function () {
-  //   fetch(`http://www.nokeynoshade.party/api/queens/all`)
-  //     .then((res) => res.json())
-  //     .then((data) => setAllQueens(data));
-  // }, []);
+  React.useEffect(function () {
+    fetch(`http://www.nokeynoshade.party/api/queens/all`)
+      .then((res) => res.json())
+      .then((data) => setAllQueens(data));
+  }, []);
 
+  console.log(allQueens);
   // const myQueenElements = allQueens.splice(0, 10).map((item) => {
   //   return <CardDisplays item={item} />;
   // });
@@ -27,9 +28,11 @@ function App() {
   const [emptyQueens, setEmptyQueens] = React.useState([]);
 
   function addNewQueen() {
+    const certainQueen = [allQueens[2].name];
     const newQueen = {
       id: nanoid(),
-      body: "Tammie Faye Brown",
+      body: "Tammy",
+      whole: certainQueen,
     };
     setEmptyQueens((prevQueen) => [newQueen, ...prevQueen]);
   }
