@@ -2,9 +2,11 @@ import "./cardDisplaysStyle.css";
 import React from "react";
 
 export default function CardDisplays(props) {
-  return (
-    <div className="cardDisplaySectionContainer">
-      <div className="myQueensContainer">
+  const myQueenElements = props.emptyQueens.map((queen) => (
+    <p>{queen.whole}</p>
+  ));
+  return { myQueenElements };
+  /* <div className="myQueensContainer">
         <div className="myQueen">
           <img src={props.item.image_url} className="myQueen--Image"></img>
           <p className="myQueen--Name">Name: {props.item.name}</p>
@@ -17,7 +19,5 @@ export default function CardDisplays(props) {
           <p className="myQueen--Quote">"{props.item.quote}"</p>
           <button className="myQueen--Id">Shantay {props.item.id}</button>
         </div>
-      </div>
-    </div>
-  );
+      </div> */
 }
