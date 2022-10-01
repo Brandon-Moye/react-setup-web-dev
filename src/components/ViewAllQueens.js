@@ -33,7 +33,7 @@ export default function ViewAllQueens(props) {
 
         {myQueenElements}
 
-        {/* <div className="gridCell">{mapQueen}</div> */}
+        {/* <div className="gridCell">{props.item.name}</div> */}
         {/* <div className="gridCell">{props.item.winner ? "Yes" : "No"}</div>
         <div className="gridCell">
           {props.item.missCongeniality ? "Yes" : "No"}

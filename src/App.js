@@ -8,6 +8,7 @@ import { nanoid } from "nanoid";
 
 function App() {
   const [allQueens, setAllQueens] = React.useState([]);
+  const [gridQueens, setGridQueens] = React.useState([]);
 
   React.useEffect(function () {
     fetch(`http://www.nokeynoshade.party/api/queens/all`)
@@ -28,7 +29,8 @@ function App() {
   const [emptyQueens, setEmptyQueens] = React.useState([]);
 
   function addNewQueen() {
-    const certainQueen = [allQueens[2].name];
+    const randomNumber = Math.floor(Math.random() * allQueens.length);
+    const certainQueen = allQueens[randomNumber].name;
     const newQueen = {
       id: nanoid(),
       body: "Tammy",
