@@ -16,22 +16,32 @@ function App() {
       .then((data) => setAllQueens(data));
   }, []);
 
+  React.useEffect(function () {
+    fetch(`http://www.nokeynoshade.party/api/queens/all`)
+      .then((res) => res.json())
+      .then((data) => setGridQueens(data));
+  }, []);
+
   // console.log(allQueens);
   // const myQueenElements = allQueens.splice(0, 10).map((item) => {
   //   return <CardDisplays item={item} />;
   // });
 
-  const [emptyQueens, setEmptyQueens] = React.useState([]);
+  const [emptyQueens, setEmptyQueens] = React.useState([""]);
 
-  const gridQueenElements = allQueens.map((item) => {
+  const myQueenElements = emptyQueens.map((certainItem) => {
     return (
-      <ViewAllQueens
-        item={item}
+      <CardDisplays
+        certainItem={certainItem}
         handleClick={onclick}
         emptyQueens={emptyQueens}
         newQueen={addNewQueen}
       />
     );
+  });
+
+  const gridQueenElements = gridQueens.map((item) => {
+    return <ViewAllQueens item={item} />;
   });
 
   // --------------------------
@@ -50,9 +60,10 @@ function App() {
       <Header />
       <Instructions />
       <Search />
+      {myQueenElements}
       {/* <ViewAllQueens emptyQueens={emptyQueens} newQueen={addNewQueen} /> */}
       {/* {myQueenElements} */}
-      {gridQueenElements}
+      {/* {gridQueenElements} */}
     </div>
   );
 }

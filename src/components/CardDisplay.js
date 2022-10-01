@@ -5,7 +5,12 @@ export default function CardDisplays(props) {
   const myQueenElements = props.emptyQueens.map((queen) => (
     <p>{queen.whole}</p>
   ));
-  return { myQueenElements };
+  return (
+    <div>
+      <div>{myQueenElements}</div>
+      <button onClick={props.newQueen}>+</button>
+    </div>
+  );
   /* <div className="myQueensContainer">
         <div className="myQueen">
           <img src={props.item.image_url} className="myQueen--Image"></img>
