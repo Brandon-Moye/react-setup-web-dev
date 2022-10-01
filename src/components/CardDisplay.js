@@ -9,7 +9,7 @@ export default function CardDisplays(props) {
   return (
     <div className="cardDisplayContainer">
       <div>{props.certainItem.whole}</div>
-      <button onClick={props.newQueen}>+</button>
+      {/* <button onClick={props.newQueen}>+</button> */}
     </div>
   );
   /* <div className="myQueensContainer">

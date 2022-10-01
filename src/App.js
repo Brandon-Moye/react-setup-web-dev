@@ -60,7 +60,7 @@ function App() {
       <Header />
       <Instructions />
       <Search />
-      {/* <button onClick={addNewQueen}>+</button> */}
+      <button onClick={addNewQueen}>+</button>
       {myQueenElements}
       {/* <ViewAllQueens emptyQueens={emptyQueens} newQueen={addNewQueen} /> */}
       {/* {myQueenElements} */}
