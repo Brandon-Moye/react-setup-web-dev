@@ -41,7 +41,7 @@ function App() {
   });
 
   const gridQueenElements = gridQueens.map((item) => {
-    return <ViewAllQueens item={item} />;
+    return <ViewAllQueens item={item} newQueen={addNewQueen} />;
   });
 
   // --------------------------

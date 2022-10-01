@@ -24,7 +24,7 @@ export default function ViewAllQueens(props) {
     <div className="queenContainer">
       {/* <div>{myQueenElements}</div> */}
       <div className="ViewAllQueensContainer">
-        {/* <button onClick={props.newQueen}>+</button> */}
+        <button onClick={props.newQueen}>+</button>
 
         <div className="gridCell">{props.item.name}</div>
         <div className="gridCell">{props.item.winner ? "Yes" : "No"}</div>
