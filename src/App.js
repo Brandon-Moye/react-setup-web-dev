@@ -53,17 +53,18 @@ function App() {
       id: nanoid(),
       whole: certainQueen,
     };
-    setEmptyQueens((prevQueen) => [newQueen, ...prevQueen]);
+    setEmptyQueens((prevQueen) => [...prevQueen, newQueen]);
   }
   return (
     <div>
       <Header />
       <Instructions />
       <Search />
+      {/* <button onClick={addNewQueen}>+</button> */}
       {myQueenElements}
       {/* <ViewAllQueens emptyQueens={emptyQueens} newQueen={addNewQueen} /> */}
       {/* {myQueenElements} */}
-      {/* {gridQueenElements} */}
+      {gridQueenElements}
     </div>
   );
 }

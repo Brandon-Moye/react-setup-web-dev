@@ -2,12 +2,13 @@ import "./cardDisplaysStyle.css";
 import React from "react";
 
 export default function CardDisplays(props) {
-  const myQueenElements = props.emptyQueens.map((queen) => (
-    <p>{queen.whole}</p>
-  ));
+  // const myQueenElements = props.emptyQueens.map((certainItem) => (
+  //   <p>{certainItem.whole}</p>
+  // ));
+
   return (
-    <div>
-      <div>{myQueenElements}</div>
+    <div className="cardDisplayContainer">
+      <div>{props.certainItem.whole}</div>
       <button onClick={props.newQueen}>+</button>
     </div>
   );
