@@ -3,7 +3,7 @@ import React from "react";
 
 export default function ViewAllQueens(props) {
   function handleClick() {
-    console.log(props.item.id);
+    console.log(props.item);
   }
 
   return (
