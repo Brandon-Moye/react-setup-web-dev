@@ -2,21 +2,38 @@ import "./viewAllQueens.css";
 import React from "react";
 
 export default function ViewAllQueens(props) {
-  function handleClick() {
-    console.log(props.item);
-  }
+  // const [allQueens, setAllQueens] = React.useState([]);
+
+  // React.useEffect(function () {
+  //   fetch(`http://www.nokeynoshade.party/api/queens/all`)
+  //     .then((res) => res.json())
+  //     .then((data) => setAllQueens(data));
+  // }, []);
+
+  // console.log(allQueens);
+
+  // const mapQueen = props.allQueens.map((item) => {
+  //   return (item = { item });
+  // });
+  // ----------------------------------
+
+  // console.log(empt.whole);
+  // console.log(myQueenElements);
 
   return (
     <div className="queenContainer">
+      {/* <div>{myQueenElements}</div> */}
       <div className="ViewAllQueensContainer">
+        {/* <button onClick={props.newQueen}>+</button> */}
+
         <div className="gridCell">{props.item.name}</div>
         <div className="gridCell">{props.item.winner ? "Yes" : "No"}</div>
         <div className="gridCell">
           {props.item.missCongeniality ? "Yes" : "No"}
         </div>
-        <button onClick={handleClick} className="gridCell">
+        {/* <button onClick={props.newQueen} className="gridCell">
           {props.item.id}
-        </button>
+        </button> */}
       </div>
     </div>
   );
