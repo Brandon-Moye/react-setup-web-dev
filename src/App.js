@@ -27,7 +27,13 @@ function App() {
   //   return <CardDisplays item={item} />;
   // });
 
-  const [emptyQueens, setEmptyQueens] = React.useState([""]);
+  const [emptyQueens, setEmptyQueens] = React.useState(
+    JSON.parse(localStorage.getItem("emptyQueens")) || []
+  );
+
+  React.useEffect(() => {
+    localStorage.setItem("emptyQueens", JSON.stringify(emptyQueens));
+  }, [emptyQueens]);
 
   function addNewQueen(queenId) {
     // const randomNumber = Math.floor(Math.random() * allQueens.length);
