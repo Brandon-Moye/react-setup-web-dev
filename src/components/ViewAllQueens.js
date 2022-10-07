@@ -20,11 +20,21 @@ export default function ViewAllQueens(props) {
   // console.log(empt.whole);
   // console.log(myQueenElements);
 
+  // const blah = function () {
+  //   props.handleClick(1);
+  // };
+
   return (
     <div className="queenContainer">
       {/* <div>{myQueenElements}</div> */}
       <div className="ViewAllQueensContainer">
-        <button onClick={props.newQueen}>+</button>
+        <button
+          onClick={() => {
+            props.handleClick(props.item.id);
+          }}
+        >
+          +{props.item.id}
+        </button>
 
         <div className="gridCell">{props.item.name}</div>
         <div className="gridCell">{props.item.winner ? "Yes" : "No"}</div>
