@@ -41,10 +41,12 @@ function App() {
       return theQueenThatIsCurrentlyBeingIndexed.id === queenId;
     });
     console.log(findSelectedQueen);
+    const certainQueenImage = findSelectedQueen.image_url;
     const certainQueenName = findSelectedQueen.name;
     const certainQueenWinnerStatus = findSelectedQueen.winner;
     const certainQueenCongenialStatus = findSelectedQueen.missCongeniality;
     const newQueen = {
+      selectedQueenImage: certainQueenImage,
       selectedQueenName: certainQueenName,
       selectedQueenWinnerStatus: certainQueenWinnerStatus ? "Yes" : "No",
       selectedQueenCongenialStatus: certainQueenCongenialStatus ? "Yes" : "No",

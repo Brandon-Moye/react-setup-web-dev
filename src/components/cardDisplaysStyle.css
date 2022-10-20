@@ -1,8 +1,17 @@
-.cardDisplayContainer {
+.card {
+  background-color: pink;
+  padding: 0.25rem;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
 }
 
-.card {
-  border: 1px solid black;
-  display: inline-block;
+.card img {
+  margin: 0 auto;
+  width: 4rem;
 }
+/* .cardQueenImageProp {
+  margin: auto 0;
+  width: 4rem;
+} */
