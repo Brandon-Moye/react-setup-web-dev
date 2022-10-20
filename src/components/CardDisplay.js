@@ -5,14 +5,18 @@ export default function CardDisplays(props) {
   return (
     <div className="cardDisplayContainer">
       <div className="card">
+        <img
+          className="cardQueenImageProp"
+          src={props.certainItem.selectedQueenImage}
+        ></img>
         <div className="cardQueenNameProp">
-          {props.certainItem.selectedQueenName}
+          Name: {props.certainItem.selectedQueenName}
         </div>
         <div className="cardQueenWinnerProp">
-          {props.certainItem.selectedQueenWinnerStatus}
+          Winner: {props.certainItem.selectedQueenWinnerStatus}
         </div>
         <div className="cardQueenCongenialProp">
-          {props.certainItem.selectedQueenCongenialStatus}
+          Congenial: {props.certainItem.selectedQueenCongenialStatus}
         </div>
       </div>
     </div>
