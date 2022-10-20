@@ -1,0 +1,4 @@
+.appMyQueensContainer {
+  display: flex;
+  justify-content: space-evenly;
+}
