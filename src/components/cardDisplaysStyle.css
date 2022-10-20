@@ -1,24 +1,8 @@
-.cardDisplaySectionContainer {
-  margin-top: 1.5rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-}
-.myQueensContainerTitle {
-  border-bottom: 1px solid pink;
-  margin-left: 1.5rem;
-  margin-right: 1.5rem;
+.cardDisplayContainer {
+  display: flex;
 }
 
-.myQueensContainer {
-  display: grid;
-}
-.myQueensContainer > div {
-  border: 1px solid pink;
-  width: 15rem;
-  height: 25rem;
-  margin: 1rem;
-}
-
-.myQueen--Image {
-  width: 6rem;
+.card {
+  border: 1px solid black;
+  display: inline-block;
 }

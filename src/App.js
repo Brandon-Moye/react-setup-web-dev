@@ -4,11 +4,10 @@ import Search from "./components/Search";
 import CardDisplays from "./components/CardDisplay";
 import ViewAllQueens from "./components/ViewAllQueens";
 import React from "react";
-import { nanoid } from "nanoid";
+import "./appStyle.css";
 
 function App() {
   const [allQueens, setAllQueens] = React.useState([]);
-  // const [gridQueens, setGridQueens] = React.useState([]);
 
   React.useEffect(function () {
     fetch(`http://www.nokeynoshade.party/api/queens/all`)
@@ -16,26 +15,16 @@ function App() {
       .then((data) => setAllQueens(data));
   }, []);
 
-  // React.useEffect(function () {
-  //   fetch(`http://www.nokeynoshade.party/api/queens/all`)
-  //     .then((res) => res.json())
-  //     .then((data) => setGridQueens(data));
-  // }, []);
-
-  // console.log(allQueens);
-  // const myQueenElements = allQueens.splice(0, 10).map((item) => {
-  //   return <CardDisplays item={item} />;
-  // });
-
-  const [emptyQueens, setEmptyQueens] = React.useState(
-    JSON.parse(localStorage.getItem("emptyQueens")) || []
+  const [mySelectedQueens, setMySelectedQueens] = React.useState(
+    JSON.parse(localStorage.getItem("mySelectedQueens")) || []
   );
 
   React.useEffect(() => {
-    localStorage.setItem("emptyQueens", JSON.stringify(emptyQueens));
-  }, [emptyQueens]);
+    localStorage.setItem("mySelectedQueens", JSON.stringify(mySelectedQueens));
+  }, [mySelectedQueens]);
 
   function addNewQueen(queenId) {
+    // -----------------++ LEAVE IN FOR REFERENCE ON WHAT THE FIND F(X) IS DOING ++--------------
     // const randomNumber = Math.floor(Math.random() * allQueens.length);
     // let foundQueen;
     // for (let i = 0; i <= allQueens.length - 1; i++) {
@@ -44,20 +33,26 @@ function App() {
     //     foundQueen = allQueens[i];
     //   }
     // }
-    const foundQueenShort = allQueens.find(function (
+    // ******************************************************************************************
+
+    const findSelectedQueen = allQueens.find(function (
       theQueenThatIsCurrentlyBeingIndexed
     ) {
       return theQueenThatIsCurrentlyBeingIndexed.id === queenId;
     });
-    const certainQueen = foundQueenShort.name;
+    console.log(findSelectedQueen);
+    const certainQueenName = findSelectedQueen.name;
+    const certainQueenWinnerStatus = findSelectedQueen.winner;
+    const certainQueenCongenialStatus = findSelectedQueen.missCongeniality;
     const newQueen = {
-      id: nanoid(),
-      whole: certainQueen,
+      selectedQueenName: certainQueenName,
+      selectedQueenWinnerStatus: certainQueenWinnerStatus ? "Yes" : "No",
+      selectedQueenCongenialStatus: certainQueenCongenialStatus ? "Yes" : "No",
     };
-    setEmptyQueens((prevQueen) => [...prevQueen, newQueen]);
+    setMySelectedQueens((prevQueen) => [...prevQueen, newQueen]);
   }
 
-  const myQueenElements = emptyQueens.map((certainItem) => {
+  const myQueenElements = mySelectedQueens.map((certainItem) => {
     return <CardDisplays certainItem={certainItem} handleClick={onclick} />;
   });
 
@@ -69,13 +64,11 @@ function App() {
 
   return (
     <div>
-      {/* <Header /> */}
-      {/* <Instructions /> */}
-      {/* <Search /> */}
-      <button onClick={addNewQueen}>+</button>
-      {myQueenElements}
-      {/* <ViewAllQueens emptyQueens={emptyQueens} newQueen={addNewQueen} /> */}
-      {/* {myQueenElements} */}
+      <Header />
+      <Instructions />
+      <Search />
+      <button onClick={localStorage.clear()}>clear queens</button>
+      <div className="appMyQueensContainer">{myQueenElements}</div>
       {gridQueenElements}
     </div>
   );
