@@ -1,17 +1,43 @@
 .card {
-  background-color: pink;
-  padding: 0.25rem;
+  background-color: #f598b9;
+  padding: 0rem 1rem 0rem 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   /* align-items: center; */
+  border-radius: 10px;
+  color: #30161f;
+  height: 32.25rem;
+  box-shadow: 0px 1px 10px #30161f;
 }
 
 .card img {
   margin: 0 auto;
-  height: 20rem;
+  height: 15rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  box-shadow: 0px 0px 5px #30161f;
 }
-/* .cardQueenImageProp {
-  margin: auto 0;
-  width: 4rem;
-} */
+
+.cardQueenNameProp {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+.cardQueenCongenialProp {
+  margin-bottom: 0.5rem;
+}
+
+.cardQueenQuoteProp {
+  width: 15rem;
+  margin-bottom: 2.5rem;
+}
+
+.sashayAwayMyQueenButton {
+  padding: 1rem;
+  width: 10rem;
+  margin: 0 auto;
+  border-radius: 10px;
+  border: none;
+  font-size: 1.25rem;
+  background-color: #fbd3e1;
+}

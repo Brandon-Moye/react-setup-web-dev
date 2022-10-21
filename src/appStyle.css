@@ -1,4 +1,6 @@
 .appMyQueensContainer {
   display: flex;
   justify-content: space-evenly;
+  margin-bottom: 2.5rem;
+  height: 35rem;
 }
