@@ -10,14 +10,19 @@ export default function CardDisplays(props) {
           src={props.certainItem.selectedQueenImage}
         ></img>
         <div className="cardQueenNameProp">
-          Name: {props.certainItem.selectedQueenName}
+          <strong>{props.certainItem.selectedQueenName}</strong>
         </div>
         <div className="cardQueenWinnerProp">
-          Winner: {props.certainItem.selectedQueenWinnerStatus}
+          <strong>Winner:</strong> {props.certainItem.selectedQueenWinnerStatus}
         </div>
         <div className="cardQueenCongenialProp">
-          Congenial: {props.certainItem.selectedQueenCongenialStatus}
+          <strong>Congenial: </strong>
+          {props.certainItem.selectedQueenCongenialStatus}
         </div>
+        <i className="cardQueenQuoteProp">
+          {props.certainItem.selectedQueenQuote}
+        </i>
+        <button className="sashayAwayMyQueenButton">Sashay Away</button>
       </div>
     </div>
   );

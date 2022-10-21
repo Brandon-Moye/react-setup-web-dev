@@ -45,11 +45,13 @@ function App() {
     const certainQueenName = findSelectedQueen.name;
     const certainQueenWinnerStatus = findSelectedQueen.winner;
     const certainQueenCongenialStatus = findSelectedQueen.missCongeniality;
+    const certainQueenQuote = findSelectedQueen.quote;
     const newQueen = {
       selectedQueenImage: certainQueenImage,
       selectedQueenName: certainQueenName,
       selectedQueenWinnerStatus: certainQueenWinnerStatus ? "Yes" : "No",
       selectedQueenCongenialStatus: certainQueenCongenialStatus ? "Yes" : "No",
+      selectedQueenQuote: certainQueenQuote,
     };
     setMySelectedQueens((prevQueen) => [...prevQueen, newQueen]);
   }
