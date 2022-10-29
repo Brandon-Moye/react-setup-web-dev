@@ -8,14 +8,24 @@
   border: 0.5px solid #f06c9b;
   color: #30161f;
 }
+.queenNameInGrid {
+  font-size: 1.15rem;
+}
 
 .shantayYouStayButton {
-  padding: 1rem;
-  width: 10rem;
-  margin: 0 auto;
+  padding: 0.5rem;
+  width: 7.5rem;
   border-radius: 10px;
   border: none;
   font-size: 1rem;
   background-color: #f598b9;
   color: #30161f;
+}
+
+.shantayYouStayButton:hover span {
+  display: none;
+}
+
+.shantayYouStayButton:hover:before {
+  content: "You Stay";
 }

@@ -41,3 +41,11 @@
   font-size: 1.25rem;
   background-color: #fbd3e1;
 }
+
+.sashayAwayMyQueenButton:hover span {
+  display: none;
+}
+
+.sashayAwayMyQueenButton:hover:before {
+  content: "Away";
+}

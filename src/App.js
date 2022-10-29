@@ -3,6 +3,7 @@ import Instructions from "./components/Instructions";
 import Search from "./components/Search";
 import CardDisplays from "./components/CardDisplay";
 import ViewAllQueens from "./components/ViewAllQueens";
+import ViewAllQueensHeader from "./components/ViewAllQueensHeader";
 import React from "react";
 import "./appStyle.css";
 
@@ -96,6 +97,7 @@ function App() {
       <Search />
       {/* <button onClick={localStorage.clear()}>clear queens</button> */}
       <div className="appMyQueensContainer">{myQueenElements}</div>
+      <ViewAllQueensHeader />
       {gridQueenElements}
     </div>
   );

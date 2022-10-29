@@ -28,7 +28,7 @@ export default function CardDisplays(props) {
             props.handleClick(props.certainItem.selectedQueenId);
           }}
         >
-          Sashay Away
+          <span>Sashay</span>
         </button>
       </div>
     </div>
