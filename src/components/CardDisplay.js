@@ -22,7 +22,14 @@ export default function CardDisplays(props) {
         <i className="cardQueenQuoteProp">
           {props.certainItem.selectedQueenQuote}
         </i>
-        <button className="sashayAwayMyQueenButton">Sashay Away</button>
+        <button
+          className="sashayAwayMyQueenButton"
+          onClick={() => {
+            props.handleClick(props.certainItem.selectedQueenId);
+          }}
+        >
+          Sashay Away
+        </button>
       </div>
     </div>
   );
