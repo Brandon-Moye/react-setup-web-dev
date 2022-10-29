@@ -1,4 +1,21 @@
 .ViewAllQueensContainer {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+  padding: 0.5rem;
+  background-color: #fbd3e1;
+  border: 0.5px solid #f06c9b;
+  color: #30161f;
+}
+
+.shantayYouStayButton {
+  padding: 1rem;
+  width: 10rem;
+  margin: 0 auto;
+  border-radius: 10px;
+  border: none;
+  font-size: 1rem;
+  background-color: #f598b9;
+  color: #30161f;
 }
