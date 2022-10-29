@@ -41,12 +41,14 @@ function App() {
       return theQueenThatIsCurrentlyBeingIndexed.id === queenId;
     });
     console.log(findSelectedQueen);
+    const certainQueenId = findSelectedQueen.id;
     const certainQueenImage = findSelectedQueen.image_url;
     const certainQueenName = findSelectedQueen.name;
     const certainQueenWinnerStatus = findSelectedQueen.winner;
     const certainQueenCongenialStatus = findSelectedQueen.missCongeniality;
     const certainQueenQuote = findSelectedQueen.quote;
     const newQueen = {
+      selectedQueenId: certainQueenId,
       selectedQueenImage: certainQueenImage,
       selectedQueenName: certainQueenName,
       selectedQueenWinnerStatus: certainQueenWinnerStatus ? "Yes" : "No",
@@ -56,8 +58,29 @@ function App() {
     setMySelectedQueens((prevQueen) => [...prevQueen, newQueen]);
   }
 
+  function removeNewQueen(queenId) {
+    const findSelectedQueenToRemove = mySelectedQueens.find(function (
+      theQueenThatIsCurrentlyBeingIndexed
+    ) {
+      return theQueenThatIsCurrentlyBeingIndexed.selectedQueenId === queenId;
+    });
+    console.log(findSelectedQueenToRemove);
+    console.log(mySelectedQueens.indexOf(findSelectedQueenToRemove));
+    const indexOfMySelectedQueensSashay = mySelectedQueens.indexOf(
+      findSelectedQueenToRemove
+    );
+    const newStateWithQueenRemoved = mySelectedQueens.splice(
+      indexOfMySelectedQueensSashay,
+      1
+    );
+    console.log(mySelectedQueens);
+    setMySelectedQueens(mySelectedQueens);
+  }
+
   const myQueenElements = mySelectedQueens.map((certainItem) => {
-    return <CardDisplays certainItem={certainItem} handleClick={onclick} />;
+    return (
+      <CardDisplays certainItem={certainItem} handleClick={removeNewQueen} />
+    );
   });
 
   const gridQueenElements = allQueens.map((item) => {
@@ -71,7 +94,7 @@ function App() {
       <Header />
       <Instructions />
       <Search />
-      <button onClick={localStorage.clear()}>clear queens</button>
+      {/* <button onClick={localStorage.clear()}>clear queens</button> */}
       <div className="appMyQueensContainer">{myQueenElements}</div>
       {gridQueenElements}
     </div>
