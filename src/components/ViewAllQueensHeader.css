@@ -1,0 +1,12 @@
+.ViewAllQueensHeaderContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+  padding: 0.5rem;
+  background-color: #f06c9b;
+  border: none;
+  color: #fef0f5;
+  font-size: 1.5rem;
+  font-weight: 700;
+}

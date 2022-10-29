@@ -5,7 +5,7 @@ export default function ViewAllQueens(props) {
   return (
     <div className="queenContainer">
       <div className="ViewAllQueensContainer">
-        <div className="gridCell">
+        <div className="queenNameInGrid gridCell">
           <strong>{props.item.name}</strong>
         </div>
         <div className="gridCell">{props.item.winner ? "Yes" : "No"}</div>
@@ -18,7 +18,7 @@ export default function ViewAllQueens(props) {
             props.handleClick(props.item.id);
           }}
         >
-          Shantay You Stay
+          <span className="shantayButton">Shantay</span>
         </button>
       </div>
     </div>
