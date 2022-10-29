@@ -94,7 +94,7 @@ function App() {
       <Header />
       <Instructions />
       <Search />
-      <button onClick={localStorage.clear()}>clear queens</button>
+      {/* <button onClick={localStorage.clear()}>clear queens</button> */}
       <div className="appMyQueensContainer">{myQueenElements}</div>
       {gridQueenElements}
     </div>
