@@ -20,12 +20,77 @@
   font-size: 1rem;
   background-color: #f598b9;
   color: #30161f;
+  transition: 0.3s;
 }
 
-.shantayYouStayButton:hover span {
-  display: none;
+.btn {
+  display: inline-block;
+  background-color: #f598b9;
+  color: #30161f;
+  border-radius: 10px;
+  border: none;
+  height: 2rem;
+  width: 6rem;
+  position: relative;
+  overflow: hidden;
+  font-size: 1rem;
 }
 
-.shantayYouStayButton:hover:before {
+.btn.test-completed::after,
+.btn.test-completed::before {
+  content: "Shantay";
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  transition: all 1s;
+  left: 0;
+  line-height: 0.1rem;
+}
+
+.btn.btn.test-completed:hover::after {
+  left: -6rem;
+}
+
+.btn.test-completed::before {
   content: "You Stay";
+  left: 6rem;
 }
+
+.btn.btn.test-completed:hover::before {
+  left: 0;
+}
+/*-------------------------------------------*/
+/* .shantayYouStayButton:hover span {
+  display: none;
+  transition-duration: 2s;
+} */
+
+/* .shantayYouStayButton:hover:before {
+  content: "You Stay";
+  transition: 2s;
+} */
+
+/* .shantayYouStayButton:hover {
+  background-color: #fbd3e1;
+  transition: 0.3s;
+  box-shadow: 0 10px 30px #f598b9;
+}
+
+
+.youStayButtonText {
+  opacity: 0;
+}
+
+.shantayButtonText,
+.youStayButtonText {
+  transition: opacity 0.5s linear;
+  position: absolute;
+}
+
+.shantayYouStayButton:hover .shantayButtonText {
+  opacity: 0;
+}
+
+.shantayYouStayButton:hover .youStayButtonText {
+  opacity: 1;
+} */

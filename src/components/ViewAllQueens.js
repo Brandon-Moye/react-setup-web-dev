@@ -12,14 +12,19 @@ export default function ViewAllQueens(props) {
         <div className="gridCell">
           {props.item.missCongeniality ? "Yes" : "No"}
         </div>
-        <button
-          className="shantayYouStayButton"
-          onClick={() => {
-            props.handleClick(props.item.id);
-          }}
-        >
-          <span className="shantayButton">Shantay</span>
-        </button>
+        <div className="buttonContainer">
+          <button
+            className="btn test-completed"
+            onClick={() => {
+              props.handleClick(props.item.id);
+            }}
+          >
+            <div className="buttonTextContainer">
+              {/* <span className="shantayButtonText">Shantay</span>
+            <span className="youStayButtonText">You Stay</span> */}
+            </div>
+          </button>
+        </div>
       </div>
     </div>
   );
