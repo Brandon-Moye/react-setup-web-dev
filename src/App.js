@@ -74,7 +74,7 @@ function App() {
       1
     );
     console.log(mySelectedQueens);
-    setMySelectedQueens(mySelectedQueens);
+    setMySelectedQueens((prevQueen) => [...prevQueen]);
   }
 
   const myQueenElements = mySelectedQueens.map((certainItem) => {
@@ -94,7 +94,7 @@ function App() {
       <Header />
       <Instructions />
       <Search />
-      {/* <button onClick={localStorage.clear()}>clear queens</button> */}
+      <button onClick={localStorage.clear()}>clear queens</button>
       <div className="appMyQueensContainer">{myQueenElements}</div>
       {gridQueenElements}
     </div>
