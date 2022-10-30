@@ -32,20 +32,51 @@
   margin-bottom: 2.5rem;
 }
 
-.sashayAwayMyQueenButton {
-  padding: 1rem;
-  width: 10rem;
-  margin: 0 auto;
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.btn2 {
+  display: inline-block;
+  background-color: #fbd3e1;
+  color: #30161f;
   border-radius: 10px;
   border: none;
-  font-size: 1.25rem;
-  background-color: #fbd3e1;
+  height: 2rem;
+  width: 6rem;
+  position: relative;
+  overflow: hidden;
+  font-size: 1rem;
+  transition: all 0.75s;
 }
 
-.sashayAwayMyQueenButton:hover span {
-  display: none;
+.btn2:hover {
+  background-color: #f598b9;
+  box-shadow: 0 5px 10px #30161f;
+  cursor: pointer;
 }
 
-.sashayAwayMyQueenButton:hover:before {
+.btn2.test-completed2::after,
+.btn2.test-completed2::before {
+  content: "Sashay";
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  transition: all 0.75s;
+  left: 0;
+  line-height: 0.05rem;
+}
+
+.btn2.btn2.test-completed2:hover::after {
+  left: 6rem;
+}
+
+.btn2.test-completed2::before {
   content: "Away";
+  left: -6rem;
+}
+
+.btn2.btn2.test-completed2:hover::before {
+  left: 0;
 }

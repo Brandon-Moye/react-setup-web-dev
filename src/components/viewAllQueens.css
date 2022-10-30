@@ -12,17 +12,6 @@
   font-size: 1.15rem;
 }
 
-.shantayYouStayButton {
-  padding: 0.5rem;
-  width: 7.5rem;
-  border-radius: 10px;
-  border: none;
-  font-size: 1rem;
-  background-color: #f598b9;
-  color: #30161f;
-  transition: 0.3s;
-}
-
 .btn {
   display: inline-block;
   background-color: #f598b9;
@@ -34,6 +23,14 @@
   position: relative;
   overflow: hidden;
   font-size: 1rem;
+  transition: all 0.75s;
+}
+
+.btn:hover {
+  background-color: #fbd3e1;
+  box-shadow: 0 5px 10px #f598b9;
+  transition: all 0.75s;
+  cursor: pointer;
 }
 
 .btn.test-completed::after,
@@ -42,9 +39,9 @@
   position: absolute;
   text-align: center;
   width: 100%;
-  transition: all 1s;
+  transition: all 0.75s;
   left: 0;
-  line-height: 0.1rem;
+  line-height: 0.05rem;
 }
 
 .btn.btn.test-completed:hover::after {
@@ -59,38 +56,3 @@
 .btn.btn.test-completed:hover::before {
   left: 0;
 }
-/*-------------------------------------------*/
-/* .shantayYouStayButton:hover span {
-  display: none;
-  transition-duration: 2s;
-} */
-
-/* .shantayYouStayButton:hover:before {
-  content: "You Stay";
-  transition: 2s;
-} */
-
-/* .shantayYouStayButton:hover {
-  background-color: #fbd3e1;
-  transition: 0.3s;
-  box-shadow: 0 10px 30px #f598b9;
-}
-
-
-.youStayButtonText {
-  opacity: 0;
-}
-
-.shantayButtonText,
-.youStayButtonText {
-  transition: opacity 0.5s linear;
-  position: absolute;
-}
-
-.shantayYouStayButton:hover .shantayButtonText {
-  opacity: 0;
-}
-
-.shantayYouStayButton:hover .youStayButtonText {
-  opacity: 1;
-} */
