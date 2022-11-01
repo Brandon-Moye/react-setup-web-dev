@@ -4,7 +4,8 @@ import Search from "./components/Search";
 import CardDisplays from "./components/CardDisplay";
 import ViewAllQueens from "./components/ViewAllQueens";
 import ViewAllQueensHeader from "./components/ViewAllQueensHeader";
-import React from "react";
+import Modal from "./components/Modal";
+import React, { useState } from "react";
 import "./appStyle.css";
 
 function App() {
@@ -24,6 +25,8 @@ function App() {
     localStorage.setItem("mySelectedQueens", JSON.stringify(mySelectedQueens));
   }, [mySelectedQueens]);
 
+  const [tooManyQueensMessage, setTooManyQueensMessage] = React.useState(false);
+
   function addNewQueen(queenId) {
     // -----------------++ LEAVE IN FOR REFERENCE ON WHAT THE FIND F(X) IS DOING ++--------------
     // const randomNumber = Math.floor(Math.random() * allQueens.length);
@@ -35,28 +38,34 @@ function App() {
     //   }
     // }
     // ******************************************************************************************
-
-    const findSelectedQueen = allQueens.find(function (
-      theQueenThatIsCurrentlyBeingIndexed
-    ) {
-      return theQueenThatIsCurrentlyBeingIndexed.id === queenId;
-    });
-    console.log(findSelectedQueen);
-    const certainQueenId = findSelectedQueen.id;
-    const certainQueenImage = findSelectedQueen.image_url;
-    const certainQueenName = findSelectedQueen.name;
-    const certainQueenWinnerStatus = findSelectedQueen.winner;
-    const certainQueenCongenialStatus = findSelectedQueen.missCongeniality;
-    const certainQueenQuote = findSelectedQueen.quote;
-    const newQueen = {
-      selectedQueenId: certainQueenId,
-      selectedQueenImage: certainQueenImage,
-      selectedQueenName: certainQueenName,
-      selectedQueenWinnerStatus: certainQueenWinnerStatus ? "Yes" : "No",
-      selectedQueenCongenialStatus: certainQueenCongenialStatus ? "Yes" : "No",
-      selectedQueenQuote: certainQueenQuote,
-    };
-    setMySelectedQueens((prevQueen) => [...prevQueen, newQueen]);
+    if (mySelectedQueens.length <= 4) {
+      const findSelectedQueen = allQueens.find(function (
+        theQueenThatIsCurrentlyBeingIndexed
+      ) {
+        return theQueenThatIsCurrentlyBeingIndexed.id === queenId;
+      });
+      console.log(findSelectedQueen);
+      const certainQueenId = findSelectedQueen.id;
+      const certainQueenImage = findSelectedQueen.image_url;
+      const certainQueenName = findSelectedQueen.name;
+      const certainQueenWinnerStatus = findSelectedQueen.winner;
+      const certainQueenCongenialStatus = findSelectedQueen.missCongeniality;
+      const certainQueenQuote = findSelectedQueen.quote;
+      const newQueen = {
+        selectedQueenId: certainQueenId,
+        selectedQueenImage: certainQueenImage,
+        selectedQueenName: certainQueenName,
+        selectedQueenWinnerStatus: certainQueenWinnerStatus ? "Yes" : "No",
+        selectedQueenCongenialStatus: certainQueenCongenialStatus
+          ? "Yes"
+          : "No",
+        selectedQueenQuote: certainQueenQuote,
+      };
+      setMySelectedQueens((prevQueen) => [...prevQueen, newQueen]);
+    } else {
+      console.log("There are too many queens, chop one before you add another");
+      setTooManyQueensMessage(true);
+    }
   }
 
   function removeNewQueen(queenId) {
@@ -92,6 +101,10 @@ function App() {
 
   return (
     <div>
+      <Modal
+        onOpenOfModal={tooManyQueensMessage}
+        onCloseOfModal={() => setTooManyQueensMessage(false)}
+      />
       <Header />
       <Instructions />
       <Search />

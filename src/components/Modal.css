@@ -1,0 +1,64 @@
+.webpageLayoverForActiveModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(48, 22, 31, 0.8);
+}
+
+.modalBody {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 5px 20px 30px #30161f;
+  width: 40rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  background-color: #fbd3e1;
+  color: #30161f;
+}
+
+.modalTitleText {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  text-decoration: underline;
+}
+
+.modalInstructionsText {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-bottom: 1rem;
+}
+
+.modalCloseButtonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalCloseButton {
+  width: 5rem;
+  height: 2.5rem;
+  border-radius: 10px;
+  border: none;
+  background-color: #f598b9;
+  color: #30161f;
+  transition: all 0.3s;
+}
+
+.modalCloseButton:hover {
+  box-shadow: 0px 2.5px 10px #30161f;
+  transition: all 0.3s;
+  cursor: pointer;
+}
