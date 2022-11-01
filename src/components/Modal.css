@@ -1,0 +1,47 @@
+.webpageLayoverForActiveModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(48, 22, 31, 0.8);
+}
+
+.modalBody {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 5px 20px 30px #30161f;
+  width: 40rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.modalTitleText {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.modalInstructionsText {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-bottom: 1rem;
+}
+
+.modalCloseButton {
+  padding: 1;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  color: red;
+}

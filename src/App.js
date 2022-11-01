@@ -62,11 +62,10 @@ function App() {
         selectedQueenQuote: certainQueenQuote,
       };
       setMySelectedQueens((prevQueen) => [...prevQueen, newQueen]);
-      setTooManyQueensMessage(false);
     } else {
       console.log("There are too many queens, chop one before you add another");
-      setTooManyQueensMessage(true);
       console.log(tooManyQueensMessage);
+      setTooManyQueensMessage(true);
     }
   }
 
@@ -108,7 +107,7 @@ function App() {
         open={tooManyQueensMessage}
         onClose={() => setTooManyQueensMessage(false)}
       />
-      <button onClick={() => setTooManyQueensMessage(true)}>Modal</button>
+      {/* <button onClick={() => setTooManyQueensMessage(true)}>Modal</button> */}
       <Header />
       <Instructions />
       <Search />
