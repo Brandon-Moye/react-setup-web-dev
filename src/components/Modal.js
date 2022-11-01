@@ -2,37 +2,21 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./Modal.css";
 
-const modalStyles = {
-  position: "fixed",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  background: "#FFF",
-  padding: "50px",
-};
-
-// const overlayStyles = {
-//   position: "fixed",
-//   top: 0,
-//   left: 0,
-//   right: 0,
-//   bottom: 0,
-//   background: "rgba(0,0,0,0.7)",
-// };
-
 export default function Modal(props) {
-  if (!props.open) return null;
+  if (!props.onOpenOfModal) return null;
   return ReactDOM.createPortal(
     <div className="modalContainer">
       <div className="webpageLayoverForActiveModal" />
       <div className="modalBody">
-        <div className="modalTitleText">She Done Already Done Had Herses</div>
+        <div className="modalTitleText">She Done Already Done Had Herses!</div>
         <p className="modalInstructionsText">
-          If you'd like to add another queen, sashay at least one away first
+          If you'd like to add another queen, one must get the CHOP first!
         </p>
-        <button className="modalCloseButton" onClick={props.onClose}>
-          Close
-        </button>
+        <div className="modalCloseButtonContainer">
+          <button className="modalCloseButton" onClick={props.onCloseOfModal}>
+            Close
+          </button>
+        </div>
       </div>
     </div>,
     document.getElementById("portal")

@@ -21,6 +21,8 @@
   flex-direction: column;
   justify-content: center;
   align-content: center;
+  background-color: #fbd3e1;
+  color: #30161f;
 }
 
 .modalTitleText {
@@ -29,6 +31,7 @@
   display: flex;
   justify-content: center;
   align-content: center;
+  text-decoration: underline;
 }
 
 .modalInstructionsText {
@@ -38,10 +41,24 @@
   margin-bottom: 1rem;
 }
 
-.modalCloseButton {
-  padding: 1;
+.modalCloseButtonContainer {
   display: flex;
   justify-content: center;
-  align-content: center;
-  color: red;
+  align-items: center;
+}
+
+.modalCloseButton {
+  width: 5rem;
+  height: 2.5rem;
+  border-radius: 10px;
+  border: none;
+  background-color: #f598b9;
+  color: #30161f;
+  transition: all 0.3s;
+}
+
+.modalCloseButton:hover {
+  box-shadow: 0px 2.5px 10px #30161f;
+  transition: all 0.3s;
+  cursor: pointer;
 }
