@@ -9,4 +9,7 @@
   color: #fef0f5;
   font-size: 1.5rem;
   font-weight: 700;
+  position: sticky;
+  top: 0;
+  z-index: 2;
 }
