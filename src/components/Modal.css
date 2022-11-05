@@ -5,6 +5,7 @@
   right: 0;
   bottom: 0;
   background: rgba(48, 22, 31, 0.8);
+  z-index: 1;
 }
 
 .modalBody {
@@ -23,6 +24,7 @@
   align-content: center;
   background-color: #fbd3e1;
   color: #30161f;
+  z-index: 2;
 }
 
 .modalTitleText {
