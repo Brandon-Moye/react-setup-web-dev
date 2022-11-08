@@ -5,12 +5,12 @@ import CardDisplays from "./components/CardDisplay";
 import ViewAllQueens from "./components/ViewAllQueens";
 import ViewAllQueensHeader from "./components/ViewAllQueensHeader";
 import Modal from "./components/Modal";
+import ScrollToTop from "./components/ScrollToTop";
 import React, { useState } from "react";
 import "./appStyle.css";
 
 function App() {
   const [allQueens, setAllQueens] = React.useState([]);
-
   React.useEffect(function () {
     fetch(`http://www.nokeynoshade.party/api/queens/all`)
       .then((res) => res.json())
@@ -112,6 +112,7 @@ function App() {
       <div className="appMyQueensContainer">{myQueenElements}</div>
       <ViewAllQueensHeader />
       {gridQueenElements}
+      <ScrollToTop />
     </div>
   );
 }

@@ -24,6 +24,7 @@
   overflow: hidden;
   font-size: 1rem;
   transition: all 0.75s;
+  z-index: 0;
 }
 
 .btn:hover {
