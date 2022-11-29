@@ -45,25 +45,24 @@ function App() {
         return theQueenThatIsCurrentlyBeingIndexed.id === queenId;
       });
       console.log(findSelectedQueen);
-      const certainQueenId = findSelectedQueen.id;
-      const certainQueenImage = findSelectedQueen.image_url;
-      const certainQueenName = findSelectedQueen.name;
-      const certainQueenWinnerStatus = findSelectedQueen.winner;
-      const certainQueenCongenialStatus = findSelectedQueen.missCongeniality;
-      const certainQueenQuote = findSelectedQueen.quote;
+      // const certainQueenId = findSelectedQueen.id;
+      // const certainQueenImage = findSelectedQueen.image_url;
+      // const certainQueenName = findSelectedQueen.name;
+      // const certainQueenWinnerStatus = findSelectedQueen.winner;
+      // const certainQueenCongenialStatus = findSelectedQueen.missCongeniality;
+      // const certainQueenQuote = findSelectedQueen.quote;
       const newQueen = {
-        selectedQueenId: certainQueenId,
-        selectedQueenImage: certainQueenImage,
-        selectedQueenName: certainQueenName,
-        selectedQueenWinnerStatus: certainQueenWinnerStatus ? "Yes" : "No",
-        selectedQueenCongenialStatus: certainQueenCongenialStatus
+        selectedQueenId: findSelectedQueen.id,
+        selectedQueenImage: findSelectedQueen.image_url,
+        selectedQueenName: findSelectedQueen.name,
+        selectedQueenWinnerStatus: findSelectedQueen.winner ? "Yes" : "No",
+        selectedQueenCongenialStatus: findSelectedQueen.missCongeniality
           ? "Yes"
           : "No",
-        selectedQueenQuote: certainQueenQuote,
+        selectedQueenQuote: findSelectedQueen.quote,
       };
       setMySelectedQueens((prevQueen) => [...prevQueen, newQueen]);
     } else {
-      console.log("There are too many queens, chop one before you add another");
       setTooManyQueensMessage(true);
     }
   }
@@ -74,8 +73,6 @@ function App() {
     ) {
       return theQueenThatIsCurrentlyBeingIndexed.selectedQueenId === queenId;
     });
-    console.log(findSelectedQueenToRemove);
-    console.log(mySelectedQueens.indexOf(findSelectedQueenToRemove));
     const indexOfMySelectedQueensSashay = mySelectedQueens.indexOf(
       findSelectedQueenToRemove
     );
@@ -83,7 +80,6 @@ function App() {
       indexOfMySelectedQueensSashay,
       1
     );
-    console.log(mySelectedQueens);
     setMySelectedQueens((prevQueen) => [...prevQueen]);
   }
 
